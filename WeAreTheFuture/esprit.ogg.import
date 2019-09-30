@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/esprit.ogg-d6969e865beb1e166e9b709d755a2397.oggstr"
+
+[deps]
+
+source_file="res://esprit.ogg"
+dest_files=[ "res://.import/esprit.ogg-d6969e865beb1e166e9b709d755a2397.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

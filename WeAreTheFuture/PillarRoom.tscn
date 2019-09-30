@@ -1,0 +1,112 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://PillarRoom.dae" type="PackedScene" id=1]
+[ext_resource path="res://Room.gd" type="Script" id=2]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://start.png" type="Texture" id=5]
+[ext_resource path="res://Endzone.tscn" type="PackedScene" id=6]
+
+[sub_resource type="ConcavePolygonShape" id=1]
+data = PoolVector3Array( 9.966, -1, 9.9538, -9.9666, 8.9698, 9.9538, 9.966, 8.9698, 9.9538, 9.966, -1, 9.9538, -9.9666, -1, 9.9538, -9.9666, 8.9698, 9.9538, -9.9666, -1, 9.9538, -9.9666, 8.9698, -0.0098, -9.9666, 8.9698, 9.9538, -9.9666, -1, 9.9538, -9.9666, -1, -0.0098, -9.9666, 8.9698, -0.0098, -9.9666, -1, -9.9733, 9.966, -1, -0.0098, 9.966, -1, -9.9733, -9.9666, -1, -9.9733, 9.966, -1, 4.972, 9.966, -1, -0.0098, -9.9666, -1, -9.9733, 9.966, -1, 9.9538, 9.966, -1, 4.972, -9.9666, -1, -9.9733, -9.9666, -1, 9.9538, 9.966, -1, 9.9538, -9.9666, -1, -9.9733, -9.9666, -1, -0.0098, -9.9666, -1, 9.9538, -9.9666, -1, -9.9733, -9.9666, -1, -4.9916, -9.9666, -1, -0.0098, 9.966, -1, -9.9733, 9.966, 8.9698, -0.0098, 9.966, 8.9698, -9.9733, 9.966, -1, -9.9733, 9.966, -1, -0.0098, 9.966, 8.9698, -0.0098, -9.9666, -1, -9.9733, 9.966, 8.9698, -9.9733, -9.9666, 8.9698, -9.9733, -9.9666, -1, -9.9733, 9.966, -1, -9.9733, 9.966, 8.9698, -9.9733, -2.2511, -1.1061, 2.1255, -2.2511, 10.9836, -2.3147, -2.2511, 10.9836, 2.1255, -2.2511, -1.1061, 2.1255, -2.2511, -1.1061, -2.3147, -2.2511, 10.9836, -2.3147, -2.2511, -1.1061, -2.3147, 2.439, 10.9836, -2.3147, -2.2511, 10.9836, -2.3147, -2.2511, -1.1061, -2.3147, 2.439, -1.1061, -2.3147, 2.439, 10.9836, -2.3147, -9.9666, -1, -4.9916, -9.9666, 8.9698, -9.9733, -9.9666, 8.9698, -4.9916, -9.9666, -1, -4.9916, -9.9666, -1, -9.9733, -9.9666, 8.9698, -9.9733, 9.966, -1, 4.972, 9.966, 8.9698, 9.9538, 9.966, 8.9698, 4.972, 9.966, -1, 4.972, 9.966, -1, 9.9538, 9.966, 8.9698, 9.9538, 2.439, -1.1061, -2.3147, 2.439, 10.9836, 2.1255, 2.439, 10.9836, -2.3147, 2.439, -1.1061, -2.3147, 2.439, -1.1061, 2.1255, 2.439, 10.9836, 2.1255, 2.439, -1.1061, 2.1255, -2.2511, 10.9836, 2.1255, 2.439, 10.9836, 2.1255, 2.439, -1.1061, 2.1255, -2.2511, -1.1061, 2.1255, -2.2511, 10.9836, 2.1255, -2.2511, -1.1061, -2.3147, 2.439, -1.1061, 2.1255, 2.439, -1.1061, -2.3147, -2.2511, -1.1061, -2.3147, -2.2511, -1.1061, 2.1255, 2.439, -1.1061, 2.1255, 2.439, 10.9836, -2.3147, -2.2511, 10.9836, 2.1255, -2.2511, 10.9836, -2.3147, 2.439, 10.9836, -2.3147, 2.439, 10.9836, 2.1255, -2.2511, 10.9836, 2.1255 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 15.5941, 0.474602, 5.65091 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 2.95052, 1, 1 )
+
+[sub_resource type="Curve3D" id=4]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 0.574333, -0.00526652, -1.24669, 0, 0, 0, 0, 0, 0, 0.60108, -0.0117188, -29.1496, 0, 0, 0, 0, 0, 0, 28.9624, -0.248047, -29.0276, 0, 0, 0, 0, 0, 0, 28.8273, -0.239258, -1.11047, 0, 0, 0, 0, 0, 0, 0.574333, -0.00526652, -1.24669 ),
+"tilts": PoolRealArray( 0, 0, 0, 0, 0 )
+}
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=5]
+
+[node name="PillarRoom" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Camera3" type="Camera" parent="." index="0" groups=[
+"Camera",
+]]
+transform = Transform( 0.0652157, 0, 0.997871, 0, 1, 0, -0.997871, 0, 0.0652157, 21.1179, 1.86648, 2.84369 )
+current = true
+
+[node name="Camera" parent="." index="1" groups=[
+"Camera",
+]]
+transform = Transform( 0.685423, -0.374231, 0.624617, 0.0135222, 0.864214, 0.502943, -0.72802, -0.336283, 0.597412, 8.5364, 10.263, 8.39312 )
+
+[node name="Camera001" parent="." index="2" groups=[
+"Camera",
+]]
+transform = Transform( -0.576225, 0.311657, -0.755536, -0.00597712, 0.922808, 0.385214, 0.81727, 0.226486, -0.529882, -9.06741, 9.12084, -8.22869 )
+
+[node name="Cube" parent="." index="3"]
+editor/display_folded = true
+
+[node name="StaticBody" type="StaticBody" parent="Cube" index="0"]
+editor/display_folded = true
+
+[node name="CollisionShape" type="CollisionShape" parent="Cube/StaticBody" index="0"]
+shape = SubResource( 1 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Cube/StaticBody" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.290504, -1.51007, -0.29783 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Cube/StaticBody" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9878, 0, -0.943115 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape6" type="CollisionShape" parent="Cube/StaticBody" index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8842, 0, 1.0708 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape7" type="CollisionShape" parent="Cube/StaticBody" index="4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8842, 0, -6.03133 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Cube/StaticBody" index="5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9878, 0, 6.01308 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Cube/StaticBody" index="6"]
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 15.8528, 0, 2.86193 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape8" type="CollisionShape" parent="Cube/StaticBody" index="7"]
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -16.0164, 0, -2.76154 )
+shape = SubResource( 3 )
+
+[node name="Player" parent="." index="5" instance=ExtResource( 3 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 12.4522, 0, 2.47905 )
+
+[node name="Enemy" parent="." index="6" groups=[
+"Enemy",
+] instance=ExtResource( 4 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.500001, -7.408, 0, 7.45728 )
+curve = SubResource( 4 )
+
+[node name="CollisionShape" parent="Enemy/PathFollow/FOV" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 6.16893e-011, 0, 6.13909e-011, 1, 0, 0, 0 )
+
+[node name="AnimationTree" parent="Enemy" index="1"]
+parameters/playback = SubResource( 5 )
+
+[node name="Camera2" type="Camera" parent="." index="7" groups=[
+"Camera",
+]]
+transform = Transform( -0.999779, 0.0200715, -0.00619142, 0.00789729, 0.632329, 0.77466, 0.0194636, 0.77444, -0.632348, 0, 26.8303, -16.1 )
+
+[node name="StartSprite" type="Sprite3D" parent="." index="8"]
+transform = Transform( 3, 0, 0, 0, -1.31134e-007, -3, 0, 3, -1.31134e-007, 12.3763, 0, 2.54808 )
+texture = ExtResource( 5 )
+
+[node name="Endzone" parent="." index="9" instance=ExtResource( 6 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, -12.5887, 0, -2.45005 )
+[connection signal="throw_jacks" from="Player" to="." method="_on_Player_throw_jacks"]
+[connection signal="body_entered" from="Endzone" to="." method="_on_Endzone_body_entered"]
+
+[editable path="Enemy"]

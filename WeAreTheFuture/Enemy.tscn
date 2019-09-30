@@ -1,0 +1,86 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Enemy.gd" type="Script" id=1]
+[ext_resource path="res://Adult.tscn" type="PackedScene" id=2]
+[ext_resource path="res://EnemyAnimationTree.gd" type="Script" id=3]
+
+[sub_resource type="CapsuleShape" id=13]
+radius = 1.37457
+height = 5.03024
+
+[sub_resource type="ConvexPolygonShape" id=17]
+points = PoolVector3Array( 0, 0, 0, 100, 0, 100, -100, 0, 100, 0, 7, 0, 100, 7, 100, -100, 7, 100 )
+
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "Stand"
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "Trip"
+
+[sub_resource type="AnimationNodeAnimation" id=14]
+animation = "Walk-loop"
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "Walk-loop"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=8]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=9]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=15]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=16]
+
+[sub_resource type="AnimationNodeStateMachine" id=11]
+states/Stand/node = SubResource( 3 )
+states/Stand/position = Vector2( 611, 132 )
+states/Trip/node = SubResource( 4 )
+states/Trip/position = Vector2( 611, 40 )
+states/Walk-loop/node = SubResource( 5 )
+states/Walk-loop/position = Vector2( 402, 40 )
+"states/Walk-loop 2/node" = SubResource( 14 )
+"states/Walk-loop 2/position" = Vector2( 402, 132 )
+transitions = [ "Walk-loop", "Trip", SubResource( 8 ), "Trip", "Stand", SubResource( 9 ), "Stand", "Walk-loop 2", SubResource( 15 ), "Walk-loop 2", "Walk-loop", SubResource( 16 ) ]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=12]
+
+[node name="Enemy" type="Path"]
+curve = null
+script = ExtResource( 1 )
+
+[node name="PathFollow" type="PathFollow" parent="."]
+rotation_mode = 4
+
+[node name="Adult" parent="PathFollow" instance=ExtResource( 2 )]
+
+[node name="Armature" parent="PathFollow/Adult" index="0"]
+transform = Transform( 1, -4.63129e-017, -4.88357e-018, 4.63129e-017, 0.978006, 0.208575, -4.88356e-018, -0.208575, 0.978006, -5.43582e-018, 3.07234, 0.354971 )
+
+[node name="Area" type="KinematicBody" parent="PathFollow"]
+editor/display_folded = true
+
+[node name="CollisionShape" type="CollisionShape" parent="PathFollow/Area"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 3.84702, 0 )
+shape = SubResource( 13 )
+
+[node name="RayCast" type="RayCast" parent="PathFollow"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, 1 )
+collide_with_areas = true
+
+[node name="FOV" type="Area" parent="PathFollow"]
+
+[node name="CollisionShape" type="CollisionShape" parent="PathFollow/FOV"]
+shape = SubResource( 17 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 11 )
+anim_player = NodePath("../PathFollow/Adult/AnimationPlayer")
+active = true
+parameters/playback = SubResource( 12 )
+script = ExtResource( 3 )
+
+[editable path="PathFollow/Adult"]

@@ -1,0 +1,14 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+valid=false
+
+[deps]
+
+source_file="res://kitchen.obj"
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true
