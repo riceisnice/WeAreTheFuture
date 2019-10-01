@@ -44,6 +44,6 @@ func _on_Player_throw_jacks(loc):
 func _on_Endzone_body_entered(body):
 	if body.is_in_group("Player"):
 		get_tree().paused = true
-		yield(get_tree().create_timer(3), "timeout")
+		yield(get_tree().create_timer(1.5), "timeout")
 		get_tree().paused = false
-		get_tree().reload_current_scene()
+		get_tree().change_scene("res://" + SceneOrder.get_scene())

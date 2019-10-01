@@ -23,6 +23,7 @@ config/icon="res://pawn.png"
 [autoload]
 
 MusicPlayer="*res://AudioStreamPlayer.tscn"
+SceneOrder="*res://SceneOrder.tscn"
 
 [input]
 

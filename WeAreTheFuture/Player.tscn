@@ -84,7 +84,7 @@ current = true
 [node name="RayCast" type="RayCast" parent="Kiddo"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.95572, 0 )
 enabled = true
-cast_to = Vector3( 0, -13.24, 10 )
+cast_to = Vector3( 0, -8.01, 10 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 17 )
